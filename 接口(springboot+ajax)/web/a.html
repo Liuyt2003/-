@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+
+        <div id="hello">
+            {{hello}}
+        </div>
+        <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+        <script src="http://cdn.jsdelivr.net/npm/vue@2.6.4"></script>
+        <script>
+            var MyVue =new Vue({
+                el:"#hello",
+                data:{
+                   hello:'你好vandy'     
+                },
+                created(){
+                    $.ajax({
+                        url:'http://localhost:8080/find',
+                        
+                        data:{
+                            name:'aaa',
+                            password:'bbb'
+                        },
+                        success:(e)=>{
+                            console.log(e);
+                        }
+                        
+                    })
+                },
+                
+            })
+        </script>
+    </body>
+</html>
